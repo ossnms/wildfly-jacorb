@@ -30,15 +30,44 @@
     <parent>
         <groupId>org.wildfly</groupId>
         <artifactId>wildfly-parent</artifactId>
-        <version>8.2.1.Final</version>
+        <version>9.0.2.Final-ossnms-005</version>
     </parent>
 
-    <groupId>org.wildfly</groupId>
     <artifactId>wildfly-jacorb</artifactId>
-    <version>8.2.1.Final</version>
     <packaging>jar</packaging>
 
     <name>WildFly: JacORB Subsystem</name>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.jacorb</groupId>
+                <artifactId>jacorb</artifactId>
+                <version>2.3.2-ossnms-001</version>
+				<exclusions>
+					<exclusion>
+						<groupId>org.slf4j</groupId>
+						<artifactId>slf4j-jdk14</artifactId>
+					</exclusion>
+				</exclusions> 
+            </dependency>
+            <dependency>
+                <groupId>org.jboss.logging</groupId>
+                <artifactId>jboss-logging</artifactId>
+                <version>3.1.4.GA</version>
+            </dependency>
+            <dependency>
+                <groupId>org.jboss.logging</groupId>
+                <artifactId>jboss-logging-processor</artifactId>
+                <version>1.2.0.Final</version>
+            </dependency>
+			<dependency>
+				<groupId>org.jboss.narayana.jts</groupId>
+				<artifactId>narayana-jts-jacorb</artifactId>
+				<version>5.0.0.Final</version>
+			</dependency>
+        </dependencies>
+    </dependencyManagement>
 
     <build>
        <plugins>
@@ -86,7 +115,7 @@
         </dependency>
 
         <dependency>
-            <groupId>org.wildfly</groupId>
+            <groupId>org.wildfly.core</groupId>
             <artifactId>wildfly-server</artifactId>
         </dependency>
 
@@ -96,7 +125,7 @@
         </dependency>
 
         <dependency>
-            <groupId>org.wildfly</groupId>
+            <groupId>org.wildfly.core</groupId>
             <artifactId>wildfly-network</artifactId>
         </dependency>
 
@@ -131,10 +160,10 @@
         </dependency>
 
         <dependency>
-         <groupId>org.wildfly</groupId>
-         <artifactId>wildfly-subsystem-test</artifactId>
-         <type>pom</type>
-         <scope>test</scope>
+            <groupId>org.wildfly.core</groupId>
+            <artifactId>wildfly-subsystem-test</artifactId>
+            <type>pom</type>
+            <scope>test</scope>
         </dependency>
 
         <dependency>
