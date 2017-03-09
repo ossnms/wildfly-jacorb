@@ -33,6 +33,7 @@
         <version>9.0.2.Final-ossnms-005</version>
     </parent>
 
+    <groupId>com.ossnms.wildfly</groupId>
     <artifactId>wildfly-jacorb</artifactId>
     <packaging>jar</packaging>
 
