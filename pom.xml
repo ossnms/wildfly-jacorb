@@ -30,12 +30,12 @@
     <parent>
         <groupId>org.wildfly</groupId>
         <artifactId>wildfly-parent</artifactId>
-        <version>10.1.0.Final-ossnms-001</version>
+        <version>14.0.1.Final</version>
     </parent>
 
     <groupId>com.ossnms.wildfly</groupId>
     <artifactId>wildfly-jacorb</artifactId>
-    <version>10.1.0.Final-ossnms-001.001</version>
+    <version>14.0.1.Final-ossnms-000.001</version>
     <packaging>jar</packaging>
 
     <name>WildFly: JacORB Subsystem</name>
@@ -67,17 +67,17 @@
             <dependency>
                 <groupId>org.jboss.logging</groupId>
                 <artifactId>jboss-logging-annotations</artifactId>
-                <version>2.0.2.Final</version>
+                <version>2.1.0.Final</version>
             </dependency>
             <dependency>
                 <groupId>org.jboss.logging</groupId>
                 <artifactId>jboss-logging-processor</artifactId>
-                <version>2.0.2.Final</version>
+                <version>2.1.0.Final</version>
             </dependency>
 			<dependency>
 				<groupId>org.jboss.narayana.jts</groupId>
 				<artifactId>narayana-jts-jacorb</artifactId>
-				<version>5.5.27.Final</version>
+				<version>5.9.0.Final</version>
 			</dependency>
 			<dependency>
 				<groupId>org.wildfly</groupId>
