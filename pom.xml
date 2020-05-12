@@ -35,7 +35,7 @@
 
     <groupId>com.ossnms.wildfly</groupId>
     <artifactId>wildfly-jacorb</artifactId>
-    <version>14.0.1.Final-ossnms-000.001</version>
+    <version>14.0.1.Final-ossnms-000.002</version>
     <packaging>jar</packaging>
 
     <name>WildFly: JacORB Subsystem</name>

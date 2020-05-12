@@ -237,7 +237,15 @@ public class JacORBSubsystemAdd extends AbstractAddStepHandler {
             for (Property property : propertiesNode.asPropertyList()) {
                 String name = property.getName();
                 ModelNode value = property.getValue();
-                props.setProperty(name, value.asString());
+                final String stringValue = value.asString();
+                final String resolvedStringValue = value.resolve().asString();
+                if (resolvedStringValue != null && !resolvedStringValue.equals(stringValue)) {
+                    JacORBLogger.ROOT_LOGGER.infoPropertyResolved( name, stringValue, resolvedStringValue);
+                    props.setProperty(name, resolvedStringValue);
+                }
+                else {
+                    props.setProperty(name, stringValue);
+                }
             }
         }
         return props;

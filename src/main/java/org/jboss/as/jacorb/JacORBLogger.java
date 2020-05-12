@@ -194,4 +194,7 @@ public interface JacORBLogger extends BasicLogger {
     @Message(id = 16335, value = "Could not deactivate anonymous IR object")
     void warnCouldNotDeactivateAnonIRObject(@Cause Throwable cause);
 
+    @LogMessage(level = INFO)
+    @Message(id = 16336, value = "Property '%s' resolved from '%s' to '%s'")
+    void infoPropertyResolved(String property, String unresolved, String resolved);
 }
